@@ -1,65 +1,37 @@
 # Arunkumar — Portfolio
 
-Editorial / minimal portfolio site for Arunkumar, Staff Product Designer (Bangalore).
+Staff Product Designer portfolio. Plain HTML + CSS + JS — no build step.
 
-Built with **Next.js 15 (App Router)**, **React 19**, **TypeScript**, and **Tailwind CSS v4**. Entry animations use `IntersectionObserver` + CSS — no JS animation library.
+## View locally
 
-## Run locally
+Just open `index.html` in any browser. That's it.
 
-You need Node 18.18+ installed. If you don't have it:
-
+Or serve it:
 ```bash
-# macOS — install Node via Homebrew (recommended)
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew install node
-
-# or use nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-nvm install --lts
+npx serve .        # Node must be installed
+# or
+python3 -m http.server 8080
 ```
 
-Then, from this directory:
+## Edit content
 
-```bash
-npm install
-npm run dev
-```
+Everything lives in `index.html`. Search for the text you want to change and edit directly.
 
-Open http://localhost:3000.
+Key things to update:
+- **Email** — search for `hello@arunkumar.design` and replace with your real email
+- **Case study links** — the two `figma.com/deck/...` href values in the Work section
+- **Bio text** — the `<p class="about-bio">` paragraph in the About section
 
-## Build & deploy
-
-```bash
-npm run build
-npm start
-```
-
-For Vercel: push this folder to GitHub, "New Project" on vercel.com, import — zero config needed.
-
-## Editing content
-
-All copy and links live in [`lib/content.ts`](lib/content.ts) — name, role, bio, case studies, community entries, contact links. Update there, save, hot reload picks it up.
-
-## Structure
+## Files
 
 ```
-app/
-  layout.tsx        fonts, metadata, theme bootstrap script
-  page.tsx          single-page composition
-  globals.css       Tailwind v4 + design tokens (light/dark)
-  robots.ts         /robots.txt route
-components/
-  Nav, Hero, About, Work, Community, Contact, Footer
-  ThemeToggle       light/dark with localStorage
-  Reveal            IntersectionObserver-driven entry animation
-  SectionHeading    shared eyebrow + serif heading
-lib/content.ts      single source of truth for all copy + links
-public/favicon.svg
+index.html   — full page
+style.css    — Shadcn Graphite dark design tokens + all styles
+script.js    — sticky nav + scroll reveal (~25 lines)
+public/
+  favicon.svg
 ```
 
-## Notes for Arunkumar
+## Deploy
 
-- **Email** in `lib/content.ts` is currently a placeholder (`hello@arunkumar.design`). Replace with your real email.
-- **Hero tagline** can be tuned — I started with "Designing B2B, B2C, and 0‑to‑1 products for the past 12+ years." Edit `components/Hero.tsx` to change it.
-- **OG image** — Next.js auto-generates one from your metadata. For a custom version, drop `public/og.png` (1200×630) and reference it in `app/layout.tsx`.
-- **Theme defaults** to system preference. Toggle saves to `localStorage`.
+Push to GitHub → Vercel picks up `index.html` as a static site automatically, zero config.
