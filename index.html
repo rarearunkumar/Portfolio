@@ -27,14 +27,33 @@
   <header id="top">
     <div class="container">
       <nav aria-label="Main navigation">
-        <a href="#top" class="nav-wordmark">Arunkumar</a>
+        <a href="#" class="nav-wordmark" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Arunkumar</a>
+
+        <!-- Desktop links -->
         <ul class="nav-links" role="list">
           <li><a href="#work">Work</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
           <li><a href="https://drive.google.com/file/d/10N0X7fQd_vvsOlTVwezWzUbTb-U2IwVU/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="nav-resume">Resume ↗</a></li>
         </ul>
+
+        <!-- Mobile: Resume always visible + hamburger -->
+        <div class="nav-mobile">
+          <a href="https://drive.google.com/file/d/10N0X7fQd_vvsOlTVwezWzUbTb-U2IwVU/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="nav-resume">Resume ↗</a>
+          <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
       </nav>
+
+      <!-- Mobile dropdown -->
+      <div class="nav-drawer" id="nav-drawer">
+        <ul role="list">
+          <li><a href="#work">Work</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
     </div>
   </header>
 
@@ -111,12 +130,6 @@
 
           </div>
 
-          <div class="portfolio-link-wrap reveal" style="transition-delay:240ms">
-            <a href="https://www.figma.com/deck/nghKRDiDGkrQOSiRkV8pS5"
-               target="_blank" rel="noopener noreferrer" class="portfolio-link">
-              See the full portfolio deck <span aria-hidden="true">↗</span>
-            </a>
-          </div>
 
         </div>
       </div>
@@ -132,41 +145,62 @@
               <span class="eyebrow-dot" aria-hidden="true"></span>
               About
             </p>
-            <h2>A designer, a teammate,<br />and a community builder.</h2>
+            <h2>Journey so far.</h2>
+          </div>
+
+          <p class="about-summary reveal">
+            12+ years of industry experience across B2C &amp; B2B domains. 4+ years of leadership.
+          </p>
+
+          <div class="badges reveal" style="transition-delay:80ms; margin-top: 0.5rem; margin-bottom: 3rem;">
+            <span class="badge">Fintech</span>
+            <span class="badge">SaaS</span>
+            <span class="badge">Ed-tech</span>
+            <span class="badge">Hyperlocal Marketplace</span>
+            <span class="badge">Enterprise</span>
           </div>
 
           <div class="about-grid">
 
-            <div class="reveal">
-              <p class="about-bio">
-                12+ years of experience in designing both B2B, B2C growth and 0 to 1 products
-                for various industries such as SaaS, Ed-tech, Hyperlocal marketplace, and enterprises.
-                4+ years of leadership experience in building high performing multi-disciplinary
-                design teams for both startups and large organisations. Mentoring early-mid career
-                designers via ADP List, also built and leading IxDF Bengaluru community chapter.
-              </p>
-              <div class="badges">
-                <span class="badge">SaaS</span>
-                <span class="badge">Ed-tech</span>
-                <span class="badge">Hyperlocal marketplace</span>
-                <span class="badge">Enterprise</span>
-              </div>
-            </div>
+            <ol class="timeline reveal" style="transition-delay:80ms">
+              <li class="timeline-item">
+                <span class="timeline-year">2024</span>
+                <p>Joined <strong>Prodigy Finance (fintech – loans)</strong> to lead originations domain, along with mentoring a small team.</p>
+              </li>
+              <li class="timeline-item">
+                <span class="timeline-year">2023</span>
+                <p>Onboarded <strong>Bookee</strong> (now Kenko.ai) to head product design — a <strong>B2B SaaS</strong> product helping fitness studio owners in the US, leading a team of 4.</p>
+              </li>
+              <li class="timeline-item">
+                <span class="timeline-year">2019</span>
+                <p>Joined <strong>BYJU'S (ed-tech)</strong> to lead UX for a new product line — Learnstation, a playful learning device and OS redefined for India &amp; US markets. Built and managed a team of 13.</p>
+              </li>
+              <li class="timeline-item">
+                <span class="timeline-year">2017</span>
+                <p>Started volunteering to <strong>lead design community</strong> — Interaction Design Foundation Bangalore chapter. 10× growth and top ranked in 2 years.</p>
+              </li>
+              <li class="timeline-item">
+                <span class="timeline-year">2017</span>
+                <p>Helped <strong>Taskmario</strong> build and launch their product (product &amp; design) — a <strong>hyperlocal marketplace</strong> for home services.</p>
+              </li>
+              <li class="timeline-item">
+                <span class="timeline-year">2017</span>
+                <p>Joined <strong>Stratacache</strong> to lead product (<strong>enterprise</strong>) and creative team for the APAC region.</p>
+              </li>
+              <li class="timeline-item">
+                <span class="timeline-year">2016</span>
+                <p>Joined <strong>Lawcubator</strong> as first designer to simplify <strong>legal compliance</strong> for workplaces. Built and led a small team.</p>
+              </li>
+              <li class="timeline-item">
+                <span class="timeline-year">2013</span>
+                <p>Started design career at <strong>Scala Inc India</strong> — digital signage and interactive solutions.</p>
+              </li>
+              <li class="timeline-item">
+                <span class="timeline-year">2013</span>
+                <p>Graduated in <strong>Animation &amp; Multimedia</strong> from Arena Animation (MS University).</p>
+              </li>
+            </ol>
 
-            <div class="stats-stack reveal" style="transition-delay:120ms">
-              <div class="stat-tile">
-                <div class="stat-value">12+</div>
-                <div class="stat-label">Years designing products</div>
-              </div>
-              <div class="stat-tile">
-                <div class="stat-value">4+</div>
-                <div class="stat-label">Years leading design teams</div>
-              </div>
-              <div class="stat-tile">
-                <div class="stat-value">4</div>
-                <div class="stat-label">Industries shipped in</div>
-              </div>
-            </div>
 
           </div>
         </div>
