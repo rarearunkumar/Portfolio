@@ -199,7 +199,7 @@ section:first-of-type {
 /* ─── Eyebrow ────────────────────────────────────────────────────────────── */
 .eyebrow {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.75rem;
   font-size: 0.6875rem;
   font-weight: 500;
@@ -215,6 +215,7 @@ section:first-of-type {
   border-radius: 50%;
   background-color: var(--accent);
   flex-shrink: 0;
+  margin-top: 0.325rem;
 }
 
 /* ─── Section heading ────────────────────────────────────────────────────── */
@@ -334,6 +335,30 @@ section:first-of-type {
 
 @media (min-width: 768px) {
   .card { padding: 2.5rem; }
+}
+
+/* Card thumbnail — bleeds to card edges at the top */
+.card-thumb {
+  margin: -2rem -2rem 1.75rem;
+  border-radius: 0.75rem 0.75rem 0 0;
+  overflow: hidden;
+  background-color: var(--muted);
+}
+
+.card-thumb img {
+  width: 100%;
+  height: auto;
+  display: block;
+  /* Crop bottom 30% of the image */
+  clip-path: inset(0 0 30% 0);
+  /* Collapse the layout space taken by the clipped portion.
+     Image h = w × 1257/541 = w × 2.323. 30% of that = w × 0.697.
+     margin-bottom % is relative to parent width, so -69.7%. */
+  margin-bottom: -69.7%;
+}
+
+@media (min-width: 768px) {
+  .card-thumb { margin: -2.5rem -2.5rem 2rem; }
 }
 
 .card-label {
