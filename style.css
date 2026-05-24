@@ -109,6 +109,18 @@ nav {
   color: var(--foreground);
 }
 
+.nav-resume {
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius) !important;
+  color: var(--foreground) !important;
+  padding: 0.25rem 0.75rem !important;
+}
+
+.nav-resume:hover {
+  background-color: var(--secondary) !important;
+  border-color: var(--foreground) !important;
+}
+
 @media (max-width: 600px) {
   .nav-links { display: none; }
 }
