@@ -324,7 +324,6 @@ section:first-of-type {
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.4s;
 }
 
@@ -440,7 +439,8 @@ section:first-of-type {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 2.5rem;
+  margin-top: auto;
+  padding-top: 2.5rem;
 }
 
 .card-footer span {
