@@ -361,6 +361,54 @@ section:first-of-type {
   .card-thumb { margin: -2.5rem -2.5rem 2rem; }
 }
 
+/* ─── Experimentations — horizontal card ─────────────────────────────────── */
+.exp-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .exp-list { gap: 1.5rem; }
+}
+
+.card--horizontal {
+  flex-direction: row;
+  align-items: stretch;
+  gap: 2rem;
+}
+
+.exp-thumb {
+  width: 220px;
+  min-width: 220px;
+  aspect-ratio: 1 / 1;
+  background-color: var(--muted);
+  border-radius: 0.5rem;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.exp-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.exp-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+/* Stack on mobile */
+@media (max-width: 640px) {
+  .card--horizontal { flex-direction: column; }
+  .exp-thumb { width: 100%; min-width: unset; }
+}
+
 .card-label {
   font-size: 0.75rem;
   font-weight: 500;
