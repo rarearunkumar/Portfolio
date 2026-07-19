@@ -680,6 +680,15 @@ section:first-of-type {
   letter-spacing: -0.025em;
   color: var(--foreground);
   margin-bottom: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.community-logo {
+  height: 1.5em;
+  width: auto;
+  flex-shrink: 0;
 }
 
 .community-card p {
