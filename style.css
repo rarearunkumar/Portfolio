@@ -248,6 +248,23 @@ section:first-of-type {
   }
 }
 
+.hero-avatar {
+  display: block;
+  width: 7.15rem;
+  height: 7.15rem;
+  border-radius: 999px;
+  object-fit: cover;
+  margin-bottom: 1.75rem;
+  border: 1px solid var(--border);
+}
+
+@media (min-width: 768px) {
+  .hero-avatar {
+    width: 8.6rem;
+    height: 8.6rem;
+  }
+}
+
 .hero-headline {
   font-size: clamp(2.75rem, 7vw, 5.5rem);
   font-weight: 700;
@@ -788,14 +805,33 @@ footer {
 }
 
 /* ─── Notable wins — deep-dive blocks ─────────────────────────────────────── */
-.wins-list {
+.wins-item {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 1.5rem;
 }
 
 @media (min-width: 768px) {
-  .wins-list { gap: 4rem; }
+  .wins-item { gap: 2rem; }
+}
+
+.win-case-study .exp-thumb {
+  background-color: transparent;
+  border-radius: 0;
+}
+
+.win-case-study .exp-thumb img {
+  object-fit: contain;
+}
+
+.wins-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+@media (min-width: 768px) {
+  .wins-list { gap: 8rem; }
 }
 
 .win-block {
