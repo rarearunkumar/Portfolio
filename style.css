@@ -527,7 +527,6 @@ section:first-of-type {
 @media (min-width: 900px) {
   .about-grid {
     grid-template-columns: 1fr;
-    max-width: 48rem;
   }
 }
 
