@@ -230,6 +230,32 @@
   filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.12));
 }
 
+/* Special treatment for panoramic totum icon card (white space around icons) */
+.gallery-card.featured-panoramic .gallery-card-visual {
+  background-color: #ffffff;
+  padding: 2.25rem 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .gallery-card.featured-panoramic .gallery-card-visual {
+    padding: 3rem 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery-card.featured-panoramic .gallery-card-visual {
+    padding: 3.75rem 3.5rem;
+  }
+}
+
+.gallery-card.featured-panoramic .gallery-card-visual img {
+  width: 100%;
+  max-width: 860px;
+  height: auto;
+  margin-inline: auto;
+}
+
+
 /* ── Lightbox Modal ──────────────────────────────────────────────────────── */
 .lightbox-modal {
   position: fixed;

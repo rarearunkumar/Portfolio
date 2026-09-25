@@ -53,6 +53,11 @@ function closeLightbox() {
   lightboxModal.classList.remove('is-open');
   document.body.classList.remove('lightbox-open');
   document.removeEventListener('keydown', handleKeyNav);
+  const wrapper = lightboxImage.closest('.lightbox-img-wrapper');
+  if (wrapper) {
+    wrapper.style.backgroundColor = '';
+    wrapper.style.padding = '';
+  }
 }
 
 function renderLightboxItem() {
@@ -74,6 +79,20 @@ function renderLightboxItem() {
   lightboxTitle.textContent = title;
   lightboxSub.textContent = platform ? `${platform} · ${desc}` : desc;
   lightboxCounter.textContent = `${currentIndex + 1} / ${galleryCards.length}`;
+
+  const wrapper = lightboxImage.closest('.lightbox-img-wrapper');
+  if (wrapper) {
+    if (currentCard.classList.contains('featured-panoramic')) {
+      wrapper.style.backgroundColor = '#ffffff';
+      wrapper.style.padding = '2.5rem 3rem';
+    } else if (currentCard.classList.contains('device-card')) {
+      wrapper.style.backgroundColor = '#fafafa';
+      wrapper.style.padding = '2rem';
+    } else {
+      wrapper.style.backgroundColor = '';
+      wrapper.style.padding = '';
+    }
+  }
 }
 
 function showNext() {
