@@ -238,13 +238,59 @@ section:first-of-type {
 /* ─── Hero ───────────────────────────────────────────────────────────────── */
 #hero .section-inner {
   padding-top: 7rem;
-  padding-bottom: 7rem;
+  padding-bottom: 5.5rem;
 }
 
 @media (min-width: 1024px) {
   #hero .section-inner {
     padding-top: 9rem;
-    padding-bottom: 9rem;
+    padding-bottom: 6.5rem;
+  }
+}
+
+/* ─── Logo Banner ────────────────────────────────────────────────────────── */
+.logo-banner {
+  border-top: 1px solid var(--border);
+  background-color: var(--background);
+}
+
+.logo-banner-track {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 3.5rem;
+  gap: 2rem;
+}
+
+.logo-banner-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-banner-img {
+  height: clamp(1.625rem, 2.5vw, 2.125rem);
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.logo-banner-img:hover {
+  opacity: 0.75;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 720px) {
+  .logo-banner-track {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.25rem 1.5rem;
+    padding-block: 2.75rem;
+  }
+
+  .logo-banner-img {
+    height: 1.75rem;
   }
 }
 
