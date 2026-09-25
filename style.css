@@ -398,7 +398,7 @@ section:first-of-type {
   .card { padding: 2.5rem; }
 }
 
-/* Card thumbnail — bleeds to card edges at the top */
+/* Card thumbnail - bleeds to card edges at the top */
 .card-thumb {
   margin: -2rem -2rem 1.75rem;
   border-radius: 0.75rem 0.75rem 0 0;
@@ -424,7 +424,7 @@ section:first-of-type {
   display: block;
 }
 
-/* ─── Experimentations — horizontal card ─────────────────────────────────── */
+/* ─── Experimentations - horizontal card ─────────────────────────────────── */
 .exp-list {
   display: flex;
   flex-direction: column;
@@ -853,7 +853,7 @@ footer {
   }
 }
 
-/* ─── Notable wins — deep-dive blocks ─────────────────────────────────────── */
+/* ─── Notable wins - deep-dive blocks ─────────────────────────────────────── */
 .wins-item {
   display: flex;
   flex-direction: column;
