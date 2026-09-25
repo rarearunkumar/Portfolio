@@ -10,7 +10,7 @@
   --border:           #e4e4e4;
   --accent:           #157aff;
   --accent-foreground:#ffffff;
-  --radius:           0.5rem;
+  --radius:           9999px;
   --font-sans:        'Inter', ui-sans-serif, system-ui, sans-serif;
   --max-w:            72rem;
 }
@@ -141,7 +141,7 @@ nav {
   width: 2.25rem;
   height: 2.25rem;
   background: transparent;
-  border: 1px solid var(--border);
+  border: none;
   border-radius: var(--radius);
   cursor: pointer;
   padding: 0.4rem 0.45rem;
@@ -295,7 +295,7 @@ section:first-of-type {
 .hero-logo-item {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .hero-logo-img {
@@ -303,6 +303,7 @@ section:first-of-type {
   width: auto;
   max-width: 100%;
   object-fit: contain;
+  object-position: left center;
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
@@ -319,8 +320,13 @@ section:first-of-type {
     margin-top: 2.25rem;
   }
 
+  .hero-logo-item {
+    justify-content: flex-start;
+  }
+
   .hero-logo-img {
     height: 1.75rem;
+    object-position: left center;
   }
 }
 
@@ -648,8 +654,8 @@ section:first-of-type {
 .badge {
   border: 1px solid var(--border);
   background-color: var(--muted);
-  border-radius: 0.25rem;
-  padding: 0.2rem 0.625rem;
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
   font-size: 0.75rem;
   font-weight: 500;
   color: var(--muted-foreground);
