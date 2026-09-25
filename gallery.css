@@ -199,8 +199,9 @@
   font-size: 0.75rem;
   color: var(--muted-foreground);
   background-color: var(--secondary);
-  padding: 0.15rem 0.5rem;
-  border-radius: 4px;
+  padding: 0.2rem 0.625rem;
+  border-radius: 9999px;
+  white-space: nowrap;
 }
 
 .gallery-card-title {
