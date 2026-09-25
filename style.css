@@ -279,6 +279,10 @@ section:first-of-type {
   color: var(--accent);
 }
 
+.hero-headline .hero-headline-sub {
+  color: #C4C4C4;
+}
+
 /* ─── Hero Logos ─────────────────────────────────────────────────────────── */
 .hero-logos {
   display: flex;
