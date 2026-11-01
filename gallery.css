@@ -104,20 +104,34 @@
 .gallery-card {
   break-inside: avoid;
   margin-bottom: 2rem;
-  background-color: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 0.875rem;
+  background-color: #ffffff;
+  border: 1px solid rgba(228, 228, 228, 0.5);
+  border: 1px solid color-mix(in srgb, var(--border) 50%, transparent);
+  border-radius: 1.25rem;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.35s, box-shadow 0.35s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03), 0 2px 8px -2px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
 }
 
 .gallery-card:hover {
-  transform: translateY(-4px);
-  border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
-  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.03);
+  transform: translateY(-3px);
+  border-color: var(--border);
+  background-color: #ffffff;
+  box-shadow: 0 12px 28px -4px rgba(0, 0, 0, 0.08),
+              0 4px 10px -2px rgba(0, 0, 0, 0.04);
+}
+
+.gallery-card:active {
+  transform: translateY(-1px) scale(0.995);
+  border-color: var(--border);
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.06);
+  transition-duration: 0.1s;
 }
 
 /* Card Visual Frame */
@@ -198,7 +212,8 @@
 .gallery-card-platform {
   font-size: 0.75rem;
   color: var(--muted-foreground);
-  background-color: var(--secondary);
+  background-color: #f6f6f6;
+  background-color: color-mix(in srgb, var(--secondary) 50%, transparent);
   padding: 0.2rem 0.625rem;
   border-radius: 9999px;
   white-space: nowrap;

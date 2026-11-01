@@ -47,3 +47,21 @@ if ('IntersectionObserver' in window) {
   // Fallback for old browsers: show everything immediately
   revealEls.forEach((el) => el.classList.add('is-visible'));
 }
+
+// ── Interactive Timeline: moves highlight on hover, resets on leave ─────────
+const timeline = document.querySelector('.timeline');
+if (timeline) {
+  const items = timeline.querySelectorAll('.timeline-item');
+
+  items.forEach((item) => {
+    item.addEventListener('mouseenter', () => {
+      items.forEach((el) => el.classList.remove('is-active'));
+      item.classList.add('is-active');
+    });
+  });
+
+  timeline.addEventListener('mouseleave', () => {
+    items.forEach((el) => el.classList.remove('is-active'));
+  });
+}
+
