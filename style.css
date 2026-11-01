@@ -235,11 +235,22 @@ section:first-of-type {
 }
 
 .section-inner {
-  padding-block: 6rem;
+  padding-top: calc(5.5rem - 0.45rem);
+  padding-bottom: 6rem;
 }
 
 @media (min-width: 768px) {
-  .section-inner { padding-block: 8rem; }
+  .section-inner {
+    padding-top: calc(5.5rem - 0.55rem);
+    padding-bottom: 8rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-inner {
+    padding-top: calc(6.5rem - 0.6875rem);
+    padding-bottom: 8rem;
+  }
 }
 
 /* ─── Eyebrow ────────────────────────────────────────────────────────────── */
@@ -542,16 +553,265 @@ section:first-of-type {
   width: fit-content;
 }
 
-/* ─── Horizontal cards (Case studies & Experimentations) ─────────────────── */
+/* ─── Experimentations (Built with AI) 2-column grid ─────────────────────── */
 .exp-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 1.25rem;
 }
 
 @media (min-width: 768px) {
-  .exp-list { gap: 1.5rem; }
+  .exp-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
 }
+
+.exp-list .card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .exp-list .card {
+    padding: 1.75rem 2rem 2rem;
+  }
+}
+
+.exp-list .exp-thumb {
+  width: 100%;
+  min-width: unset;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  background-color: var(--muted);
+  border-radius: 0.875rem;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  flex-shrink: 0;
+}
+
+.exp-list .exp-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.exp-list .exp-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.exp-list .exp-content .card-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.35rem;
+}
+
+.exp-list .exp-content h3 {
+  font-size: clamp(1.125rem, 1.4vw, 1.35rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+
+.exp-list .exp-content p {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--muted-foreground);
+}
+
+.exp-list .exp-content .card-footer {
+  margin-top: 1.5rem;
+}
+
+/* ─── Featured full-width experiment card ────────────────────────────────── */
+.exp-card--full {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 768px) {
+  .exp-list .card.exp-card--full {
+    flex-direction: row;
+    align-items: center;
+    gap: 2.25rem;
+    padding: 2rem 2.25rem;
+  }
+
+  .exp-list .exp-card--full .exp-thumb {
+    width: 260px;
+    min-width: 260px;
+    max-width: 280px;
+    aspect-ratio: 1 / 1;
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .exp-list .exp-card--full .exp-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .exp-list .exp-card--full .exp-content h3 {
+    font-size: clamp(1.2rem, 1.5vw, 1.45rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .exp-list .card.exp-card--full {
+    gap: 2.75rem;
+    padding: 2.25rem 2.5rem;
+  }
+
+  .exp-list .exp-card--full .exp-thumb {
+    width: 300px;
+    min-width: 300px;
+    max-width: 320px;
+  }
+}
+
+/* Static (non-interactive) card */
+.card.card--static {
+  cursor: default;
+}
+
+.card.card--static:hover,
+.card.card--static:active {
+  transform: none;
+  border-color: rgba(228, 228, 228, 0.5);
+  border-color: color-mix(in srgb, var(--border) 50%, transparent);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03), 0 2px 8px -2px rgba(0, 0, 0, 0.04);
+}
+
+.card.card--static:hover .exp-thumb img,
+.card.card--static:active .exp-thumb img {
+  transform: none;
+}
+
+/* Static (non-interactive) card button in default state */
+.card-btn--static,
+.card:hover .card-btn--static,
+.card-btn--static:hover,
+.card:active .card-btn--static,
+.card-btn--static:active {
+  background-color: transparent !important;
+  border-color: var(--border) !important;
+  color: var(--foreground) !important;
+  transform: none !important;
+  cursor: default;
+  pointer-events: none;
+}
+
+.card-btn--static svg,
+.card:hover .card-btn--static svg,
+.card-btn--static:hover svg {
+  transform: none !important;
+}
+
+/* ─── AI Learning Wide Card ──────────────────────────────────────────────── */
+.ai-learning-card {
+  background-color: #ffffff;
+  border: 1px solid rgba(228, 228, 228, 0.5);
+  border: 1px solid color-mix(in srgb, var(--border) 50%, transparent);
+  border-radius: 1.25rem;
+  box-shadow: none;
+  padding: 1.625rem 1.5rem;
+  min-height: 4.75rem;
+  margin-top: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  cursor: default;
+}
+
+@media (min-width: 768px) {
+  .ai-learning-card {
+    padding: 2rem 2.25rem;
+    min-height: 5.5rem;
+    margin-top: 1.5rem;
+    gap: 1.5rem;
+  }
+}
+
+.ai-learning-logos {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.ai-tool-logo {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ai-tool-logo:hover {
+  transform: translateY(-1px) scale(1.08);
+}
+
+.ai-learning-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.ai-learning-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ai-loader-spinner {
+  width: 20px;
+  height: 20px;
+  animation: ai-spin 0.9s steps(12, end) infinite;
+  display: block;
+  flex-shrink: 0;
+  color: #9e9e9e;
+}
+
+@keyframes ai-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.ai-learning-text {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--muted-foreground);
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .ai-learning-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    padding: 1.625rem 1.25rem;
+  }
+
+  .ai-learning-content {
+    justify-content: center;
+  }
+}
+
+/* ─── Horizontal cards (Case studies in Projects section) ─────────────────── */
 
 .card--horizontal {
   flex-direction: row;
@@ -982,7 +1242,7 @@ section:first-of-type {
   letter-spacing: -0.04em;
   line-height: 1;
   margin-bottom: 1.5rem;
-  margin-top: 0.5rem;
+  margin-top: 0;
 }
 
 .contact-sub {
