@@ -1035,7 +1035,7 @@
   <!-- ── Footer ────────────────────────────────────────────────────────────── -->
   <footer>
     <div class="container footer-content" style="padding-block: 2.5rem; text-align: center; color: var(--muted-foreground); font-size: 0.875rem;">
-      <p>© 2026 Arunkumar. Designed and built with craft, precision, and performance.</p>
+      <p>© <span class="current-year">2026</span> Arunkumar. Designed and built with craft, precision, and performance.</p>
     </div>
   </footer>
 
@@ -1139,6 +1139,12 @@
       if (e.key === 'Escape' && lightbox && lightbox.classList.contains('open')) {
         closeLightbox();
       }
+    });
+
+    // Dynamic Copyright Year
+    const currentYear = new Date().getFullYear();
+    document.querySelectorAll('.current-year').forEach((el) => {
+      el.textContent = currentYear;
     });
   </script>
 

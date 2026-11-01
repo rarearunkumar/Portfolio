@@ -65,3 +65,10 @@ if (timeline) {
   });
 }
 
+// ── Dynamic Copyright Year ──────────────────────────────────────────────────
+const currentYear = new Date().getFullYear();
+document.querySelectorAll('.current-year').forEach((el) => {
+  el.textContent = currentYear;
+});
+
+
