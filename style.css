@@ -502,7 +502,7 @@ section:first-of-type {
   margin: -2rem -2rem 1.75rem;
   border-radius: 1.25rem 1.25rem 0 0;
   overflow: hidden;
-  background-color: var(--muted);
+  background-color: var(--card);
   height: 380px;
   display: flex;
   align-items: center;
@@ -585,7 +585,7 @@ section:first-of-type {
   min-width: unset;
   aspect-ratio: 1 / 1;
   height: auto;
-  background-color: var(--muted);
+  background-color: var(--card);
   border-radius: 0.875rem;
   overflow: hidden;
   margin-bottom: 1.5rem;
@@ -634,14 +634,15 @@ section:first-of-type {
 /* ─── Featured full-width experiment card ────────────────────────────────── */
 .exp-card--full {
   grid-column: 1 / -1;
+  padding: 2.25rem 1.75rem;
 }
 
 @media (min-width: 768px) {
   .exp-list .card.exp-card--full {
     flex-direction: row;
-    align-items: center;
-    gap: 2.25rem;
-    padding: 2rem 2.25rem;
+    align-items: flex-start;
+    gap: 2.5rem;
+    padding: 2.5rem 2.25rem;
   }
 
   .exp-list .exp-card--full .exp-thumb {
@@ -656,7 +657,7 @@ section:first-of-type {
   .exp-list .exp-card--full .exp-content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     flex: 1;
     min-width: 0;
   }
@@ -666,12 +667,14 @@ section:first-of-type {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 900px) {
   .exp-list .card.exp-card--full {
-    gap: 2.75rem;
-    padding: 2.25rem 2.5rem;
+    padding: 3rem 3.5rem;
+    gap: 3.5rem;
   }
+}
 
+@media (min-width: 1024px) {
   .exp-list .exp-card--full .exp-thumb {
     width: 300px;
     min-width: 300px;
@@ -862,7 +865,7 @@ section:first-of-type {
   width: 160px;
   min-width: 160px;
   height: 135px;
-  background-color: var(--muted);
+  background-color: var(--card);
   border-radius: 0.75rem;
   flex-shrink: 0;
   overflow: hidden;
@@ -1134,10 +1137,10 @@ section:first-of-type {
 .badge {
   display: inline-flex;
   align-items: center;
-  border: 1px solid var(--border);
-  background-color: var(--background);
+  border: none;
+  background-color: #fafafa;
   border-radius: var(--radius);
-  padding: 0.25rem 0.75rem;
+  padding: 0.3rem 0.75rem;
   font-size: 0.875rem;
   font-weight: 450;
   color: var(--foreground);
@@ -1429,7 +1432,7 @@ footer {
 .win-thumb {
   width: 100%;
   aspect-ratio: 1 / 1;
-  background-color: var(--muted);
+  background-color: var(--card);
   border-radius: 0.75rem;
   overflow: hidden;
   display: flex;
