@@ -634,7 +634,6 @@ section:first-of-type {
 /* ─── Featured full-width experiment card ────────────────────────────────── */
 .exp-card--full {
   grid-column: 1 / -1;
-  padding: 2.25rem 1.75rem;
 }
 
 @media (min-width: 768px) {
@@ -642,13 +641,12 @@ section:first-of-type {
     flex-direction: row;
     align-items: flex-start;
     gap: 2.5rem;
-    padding: 2.5rem 2.25rem;
   }
 
   .exp-list .exp-card--full .exp-thumb {
-    width: 260px;
-    min-width: 260px;
-    max-width: 280px;
+    width: calc(50% - 2.75rem);
+    min-width: unset;
+    max-width: unset;
     aspect-ratio: 1 / 1;
     margin-bottom: 0;
     flex-shrink: 0;
@@ -664,21 +662,6 @@ section:first-of-type {
 
   .exp-list .exp-card--full .exp-content h3 {
     font-size: clamp(1.2rem, 1.5vw, 1.45rem);
-  }
-}
-
-@media (min-width: 900px) {
-  .exp-list .card.exp-card--full {
-    padding: 3rem 3.5rem;
-    gap: 3.5rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .exp-list .exp-card--full .exp-thumb {
-    width: 300px;
-    min-width: 300px;
-    max-width: 320px;
   }
 }
 
