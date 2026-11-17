@@ -995,14 +995,14 @@ section:first-of-type {
   flex-direction: column;
   position: relative;
   margin-left: 0.5rem;
-  padding-left: 1.75rem;
+  padding-left: 0.875rem;
 }
 
 .timeline-item {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 0.375rem;
+  gap: 0.4rem;
   padding-bottom: 2rem;
   cursor: pointer;
 }
@@ -1011,37 +1011,42 @@ section:first-of-type {
   padding-bottom: 0;
 }
 
-/* Connecting line strictly between nodes with comfortable hover corridor */
+/* Connecting line strictly between nodes - continuous pill track behind dots */
 .timeline-item:not(:last-child)::after {
   content: '';
   position: absolute;
-  left: calc(-1.75rem - 12.5px);
+  left: calc(-0.875rem - 1.125px);
   top: 0.45rem;
   bottom: -0.45rem;
-  width: 25px;
-  background: linear-gradient(
-    to right,
-    transparent calc(50% - 0.5px),
-    var(--border) calc(50% - 0.5px),
-    var(--border) calc(50% + 0.5px),
-    transparent calc(50% + 0.5px)
-  );
+  width: 2.25px;
+  background-color: #fafafa;
   z-index: 1;
+}
+
+.timeline-item:first-child::after {
+  border-top-left-radius: 1.125px;
+  border-top-right-radius: 1.125px;
+}
+
+.timeline-item:nth-last-child(2)::after {
+  bottom: calc(-0.45rem - 9px);
+  border-bottom-left-radius: 1.125px;
+  border-bottom-right-radius: 1.125px;
 }
 
 /* Static timeline node */
 .timeline-item::before {
   content: '';
   position: absolute;
-  left: calc(-1.75rem - 4.5px);
+  left: calc(-0.875rem - 4.5px);
   top: 0.45rem;
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background-color: var(--background);
-  border: 2px solid var(--border);
+  background-color: var(--border);
+  border: none;
   z-index: 2;
-  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: background-color 0.2s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Latest / active node - default state when not hovering any item */
@@ -1050,7 +1055,6 @@ section:first-of-type {
 .timeline-item:focus-visible::before,
 .timeline-item.is-active::before {
   background-color: var(--accent);
-  border-color: var(--accent);
   transform: scale(1.2);
 }
 
@@ -1088,26 +1092,30 @@ section:first-of-type {
 /* Tablet & Desktop alignment */
 @media (min-width: 640px) {
   .timeline {
-    padding-left: 2.25rem;
+    padding-left: 1.125rem;
   }
 
   .timeline-item {
     display: grid;
-    grid-template-columns: 3.5rem 1fr;
+    grid-template-columns: max-content 1fr;
     gap: 1.25rem;
     align-items: baseline;
     padding-bottom: 1.875rem;
   }
 
   .timeline-item::before {
-    left: calc(-2.25rem - 4.5px);
+    left: calc(-1.125rem - 4.5px);
     top: 0.4rem;
   }
 
   .timeline-item:not(:last-child)::after {
-    left: calc(-2.25rem - 12.5px);
+    left: calc(-1.125rem - 1.125px);
     top: 0.4rem;
     bottom: -0.4rem;
+  }
+
+  .timeline-item:nth-last-child(2)::after {
+    bottom: calc(-0.4rem - 9px);
   }
 }
 
