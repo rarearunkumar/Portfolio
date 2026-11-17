@@ -84,7 +84,7 @@ nav {
 }
 
 .nav-wordmark {
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 550;
   letter-spacing: -0.02em;
   color: var(--foreground);
@@ -98,7 +98,7 @@ nav {
 
 .nav-links a {
   padding: 0.45rem 0.85rem;
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   font-weight: 500;
   color: var(--muted-foreground);
   border-radius: var(--radius);
@@ -126,7 +126,7 @@ nav {
   border: 1px solid var(--foreground) !important;
   border-radius: var(--radius) !important;
   padding: 0.5rem 1.125rem !important;
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   font-weight: 500;
   line-height: 1.4;
   letter-spacing: -0.005em;
@@ -256,7 +256,7 @@ section:first-of-type {
 /* ─── Eyebrow ────────────────────────────────────────────────────────────── */
 .eyebrow {
   display: block;
-  font-size: 0.8125rem;
+  font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -524,7 +524,7 @@ section:first-of-type {
 }
 
 .card-label {
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -542,7 +542,7 @@ section:first-of-type {
 }
 
 .card p {
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.6;
   color: var(--muted-foreground);
   max-width: 38rem;
@@ -551,6 +551,7 @@ section:first-of-type {
 .card-footer {
   margin-top: 1.5rem;
   width: fit-content;
+  font-size: 0.875rem;
 }
 
 /* ─── Experimentations (Built with AI) 2-column grid ─────────────────────── */
@@ -608,7 +609,7 @@ section:first-of-type {
 }
 
 .exp-list .exp-content .card-label {
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   letter-spacing: 0.08em;
   margin-bottom: 0.35rem;
 }
@@ -622,13 +623,14 @@ section:first-of-type {
 }
 
 .exp-list .exp-content p {
-  font-size: 0.9375rem;
+  font-size: 1rem;
   line-height: 1.6;
   color: var(--muted-foreground);
 }
 
 .exp-list .exp-content .card-footer {
   margin-top: 1.5rem;
+  font-size: 0.875rem;
 }
 
 /* ─── Featured full-width experiment card ────────────────────────────────── */
@@ -658,6 +660,7 @@ section:first-of-type {
     justify-content: flex-start;
     flex: 1;
     min-width: 0;
+    padding-top: 1.75rem;
   }
 
   .exp-list .exp-card--full .exp-content h3 {
@@ -777,7 +780,7 @@ section:first-of-type {
 }
 
 .ai-learning-text {
-  font-size: 0.9375rem;
+  font-size: 1rem;
   line-height: 1.6;
   color: var(--muted-foreground);
   margin: 0;
@@ -821,7 +824,7 @@ section:first-of-type {
 }
 
 .card--horizontal .card-label {
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   letter-spacing: 0.08em;
   margin-bottom: 0.35rem;
 }
@@ -835,13 +838,14 @@ section:first-of-type {
 }
 
 .card--horizontal p {
-  font-size: 0.9375rem;
+  font-size: 1rem;
   line-height: 1.55;
   max-width: 38rem;
 }
 
 .card--horizontal .card-footer {
   margin-top: 1rem;
+  font-size: 0.875rem;
 }
 
 .exp-thumb {
@@ -906,7 +910,7 @@ section:first-of-type {
   color: var(--foreground);
   border: 1px solid var(--border);
   font-weight: 500;
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   padding: 0.5rem 1.125rem;
   border-radius: var(--radius);
   transition: background-color 0.3s, border-color 0.3s, color 0.3s, transform 0.2s ease;
@@ -972,7 +976,7 @@ section:first-of-type {
 
 /* ─── About ──────────────────────────────────────────────────────────────── */
 .about-summary {
-  font-size: 1.0625rem;
+  font-size: 1rem;
   color: var(--muted-foreground);
   margin-bottom: 1rem;
   margin-top: -2.5rem;
@@ -1058,30 +1062,18 @@ section:first-of-type {
   transform: scale(1.2);
 }
 
-/* Minimal Year typography - no backdrop or fill */
-.timeline-year {
-  font-size: 0.8125rem;
-  font-weight: 500;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: 0.02em;
-  color: var(--muted-foreground);
-  white-space: nowrap;
-  line-height: 1.6;
-  transition: color 0.2s ease;
-}
-
-.timeline:not(:has(.timeline-item:hover)):not(:has(.timeline-item:focus-visible)):not(:has(.timeline-item.is-active)) .timeline-item:first-child .timeline-year,
-.timeline-item:hover .timeline-year,
-.timeline-item:focus-visible .timeline-year,
-.timeline-item.is-active .timeline-year {
-  color: var(--accent);
-  font-weight: 600;
-}
-
+/* Timeline typography - year and description share identical font size, weight, style, and color */
+.timeline-year,
 .timeline-item p {
-  font-size: 0.9375rem;
+  font-size: 1rem;
+  font-weight: 400;
+  font-style: normal;
   line-height: 1.65;
   color: var(--muted-foreground);
+}
+
+.timeline-year {
+  white-space: nowrap;
 }
 
 .timeline-item strong {
@@ -1198,7 +1190,7 @@ section:first-of-type {
 }
 
 .community-card .role {
-  font-size: 0.6875rem;
+  font-size: 0.875rem;
   font-weight: 500;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -1224,7 +1216,7 @@ section:first-of-type {
 }
 
 .community-card p {
-  font-size: 0.9375rem;
+  font-size: 1rem;
   line-height: 1.65;
   color: var(--muted-foreground);
 }
@@ -1240,7 +1232,7 @@ section:first-of-type {
 }
 
 .contact-sub {
-  font-size: 1.0625rem;
+  font-size: 1rem;
   line-height: 1.7;
   color: var(--muted-foreground);
   max-width: 38rem;
