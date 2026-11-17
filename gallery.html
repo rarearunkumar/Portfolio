@@ -407,7 +407,14 @@
   </footer>
 
   <script src="gallery.js"></script>
-  <!-- Agentation Visual Feedback -->
-  <script src="agentation-standalone.js" defer></script>
+  <!-- Agentation Visual Feedback (Localhost preview only) -->
+  <script>
+    if (['localhost', '127.0.0.1', '0.0.0.0'].includes(window.location.hostname) || window.location.hostname.endsWith('.localhost')) {
+      const script = document.createElement('script');
+      script.src = 'agentation-standalone.js';
+      script.defer = true;
+      document.body.appendChild(script);
+    }
+  </script>
 </body>
 </html>

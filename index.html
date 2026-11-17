@@ -29,6 +29,8 @@
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "yk72eqdckc");
   </script>
+  <!-- Capture for Figma -->
+  <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
 </head>
 <body>
 
@@ -573,7 +575,14 @@
   </footer>
 
   <script src="script.js"></script>
-  <!-- Agentation Visual Feedback -->
-  <script src="agentation-standalone.js" defer></script>
+  <!-- Agentation Visual Feedback (Localhost preview only) -->
+  <script>
+    if (['localhost', '127.0.0.1', '0.0.0.0'].includes(window.location.hostname) || window.location.hostname.endsWith('.localhost')) {
+      const script = document.createElement('script');
+      script.src = 'agentation-standalone.js';
+      script.defer = true;
+      document.body.appendChild(script);
+    }
+  </script>
 </body>
 </html>
